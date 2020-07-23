@@ -1,4 +1,4 @@
-# verify the two functions by test variable t
+# verify the two functions by using a test matrix 
 
 ## generate a 5x5 squre numeric matrix
 testmatrix <- matrix(c(9, 4, 10, 4), nrow=2)
