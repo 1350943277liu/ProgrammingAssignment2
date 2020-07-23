@@ -34,7 +34,7 @@ makeCacheMatrix <- function(x = matrix()) {
 cacheSolve <- function(x, ...) {
         
         # get and check if the inverse matrix m has been computed, 
-        # if computed, return m
+        # if computed, return, which promises inverse will just be calculated once
         m <- x$getsolve()
         
         if(!is.null(m)) {
@@ -53,8 +53,8 @@ cacheSolve <- function(x, ...) {
 
 # verify the two functions by test variable t
 
-## generate a 5x5 squre matrix
-t <- matrix(26:50, nrow = 5)
+## generate a 5x5 squre numeric matrix
+t <- matrix(c(9, 4, 10, 4), nrow=2)
 
 ## make t a special matrix that can cache its inverse
 t <- makeCacheMatrix(t)
