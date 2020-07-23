@@ -54,13 +54,32 @@ cacheSolve <- function(x, ...) {
 # verify the two functions by test variable t
 
 ## generate a 5x5 squre numeric matrix
-t <- matrix(c(9, 4, 10, 4), nrow=2)
+testmatrix <- matrix(c(9, 4, 10, 4), nrow=2)
 
 ## make t a special matrix that can cache its inverse
-t <- makeCacheMatrix(t)
+t <- makeCacheMatrix(testmatrix)
 
 ## inverse hasn't been computed, this will return NULL
 t$getsolve()
 
 ## compute inverse and return it 
 cacheSolve(t)
+
+## fetch inverse again, "getting cached data" shows indicating inverse is not calculated again
+cacheSolve(t)
+
+## inverse has been cached in t
+t$getsolve()
+
+## use t$set() to change matrix
+t$set()
+
+
+# once thing noticable is that the orignal matrix must be kept in global environment
+# if use makeCacheMatrix() override, for example expression like testmatrix <- makeCacheMatrix(testmatrix)
+# t$get will return the transformed special "matrix", actually a list, causing solv() return error.
+
+
+
+
+
