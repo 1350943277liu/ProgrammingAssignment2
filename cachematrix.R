@@ -23,7 +23,7 @@ t$set()
 
 
 # once thing noticable is that the orignal matrix must be kept in global environment
-# if use makeCacheMatrix() override, for example expression like testmatrix <- makeCacheMatrix(testmatrix)
+# if use makeCacheMatrix() to override it, for example expression like testmatrix <- makeCacheMatrix(testmatrix)
 # t$get will return the transformed special "matrix", actually a list, causing solv() return error.
 
 
