@@ -43,7 +43,7 @@ cacheSolve <- function(x, ...) {
         }
         
         # if m hasn't been computed, cacheSolve() executes computing, 
-        # then return m that is the inverse of 'x'
+        # then cache m in the special matrix and print m
         data <- x$get()
         m <- solve(data, ...)
         x$setsolve(m)
