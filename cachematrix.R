@@ -43,9 +43,24 @@ cacheSolve <- function(x, ...) {
         }
         
         # if m hasn't been computed, cacheSolve() executes computing, 
-        # then cache m in the special matrix and print m
+        # then caches m in the special matrix and print m
         data <- x$get()
         m <- solve(data, ...)
         x$setsolve(m)
         m
 }
+
+
+# verify the two functions by test variable t
+
+## generate a 5x5 squre matrix
+t <- matrix(26:50, nrow = 5)
+
+## make t a special matrix that can cache its inverse
+t <- makeCacheMatrix(t)
+
+## inverse hasn't been computed, this will return NULL
+t$getsolve()
+
+## compute inverse and return it 
+cacheSolve(t)
