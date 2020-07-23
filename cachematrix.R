@@ -24,7 +24,7 @@ t$set()
 
 # one thing noticable is that the orignal matrix must be kept in global environment
 # if use makeCacheMatrix() to override it, for example expression like testmatrix <- makeCacheMatrix(testmatrix)
-# t$get will return the transformed special "matrix", actually a list, causing solve() return error.
+# t$get will return the transformed special "matrix", actually a list, causing solve() error.
 
 
 
